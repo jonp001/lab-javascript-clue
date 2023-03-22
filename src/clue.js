@@ -8,7 +8,6 @@
 
 const suspectsArray = [
     {
-
         firstName: "Jacob",
         lastName: "Green",
         occupation: "Entrepreneur",
@@ -18,7 +17,7 @@ const suspectsArray = [
         color: "green",
         },
         
-        {
+    {
         firstName: "Doctor",
         lastName: "Orchid",
         occupation: "Scientist",
@@ -28,7 +27,7 @@ const suspectsArray = [
         color: "white",
         },
         
-        {
+      {
         firstName: "Victor",
         lastName: "Plum",
         occupation: "Designer",
@@ -38,8 +37,7 @@ const suspectsArray = [
         color: "purple",
         },
         
-        {
-   
+       {
         firstName: "Kasandra",
         lastName: "Scarlet",
         occupation: "Actor",
@@ -48,8 +46,8 @@ const suspectsArray = [
         image: "https://www.radiotimes.com/uploads/images/Original/111967.jpg",
         color: "red",
         },
-        
-        {
+
+      {
         firstName: "Eleanor",
         lastName: "Peacock",
         occupation: "Socialité",
@@ -59,19 +57,17 @@ const suspectsArray = [
         color: "blue",
         },
         
-        {
-       
+       {
         firstName: "Jack",
         lastName: "Mustard",
         occupation: "Retired Football player",
         age: 62,
-        description: "He is a former football player who tries to get by on his former glory,"
+        description: "He is a former football player who tries to get by on his former glory,",
         image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg",
         color: "yellow",
-        },
-        
-        ]
-
+       },
+]
+console.log(suspectsArray[1].firstName)
 // Rooms Array
 
 const roomsArray = [
@@ -90,7 +86,7 @@ const roomsArray = [
     {name: "Theater"},
     {name: "Guest House"},
     {name: "Patio"},
-    ],
+    ]
     
 
 // Weapons Array
@@ -109,12 +105,28 @@ const weaponsArray= [
 
 // ITERATION 2
 
-function selectRandom() {}
+function selectRandom(roomsArray) {
+    if(!selectRandom.length){
+        return undefined;
+    }
+   {
+return roomsArray[Math.floor(Math.random()*roomsArray.length)];
+   }
+}
+console.log(selectRandom(roomsArray))
 
-function pickMystery() {}
-
-
+function pickMystery() {
+return {
+    suspect: selectRandom(suspectsArray),
+    weapon: selectRandom(weaponsArray),
+    room: selectRandom(roomsArray)
+}
+}
+console.log(pickMystery(suspectsArray))
 // ITERATION 3
 
-function revealMystery() {}
-
+function revealMystery(envelope) {
+        const  { suspect, weapon, room }= envelope
+        const { firstName, lastName }= suspect
+        return `${firstName} ${lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`;
+      }
